@@ -7,9 +7,9 @@ public class HomeWork04 {
         int countTrueAnswers = 0;
 
         for (int i = 0; i < Questions.getQuestions().length; i++) {
-            System.out.println(questions[i]);
+            System.out.println(Questions.getQuestions()[i]);
             String userAnswer = scanner.nextLine();
-            if (userAnswer.equals(trueAnswers[i])) {
+            if (userAnswer.equals(Questions.getTrueAnswers()[i])) {
                 System.out.println("Верно!");
                 countTrueAnswers++;
             } else {
