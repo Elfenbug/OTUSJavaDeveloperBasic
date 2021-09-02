@@ -9,6 +9,7 @@ public class Main {
         bank.newAccount("new", 10, vasya);
         bank.newAccount("new2", 300, vasya);
         bank.newAccount("old", 10, masha);
+
         System.out.println(bank);
         System.out.println(bank.seekClient("new"));
         System.out.println(bank.seekClient("old"));
