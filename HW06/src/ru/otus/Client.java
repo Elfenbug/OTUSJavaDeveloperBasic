@@ -9,7 +9,6 @@ public class Client {
         this.age = age;
     }
 
-
     @Override
     public String toString() {return "Client{" +
                 "clientName='" + clientName + '\'' +
