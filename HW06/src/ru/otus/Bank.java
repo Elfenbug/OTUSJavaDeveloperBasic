@@ -1,23 +1,25 @@
 package ru.otus;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Bank {
-    private List<Account> accounts;
+    Map<Account, Client> accounts;
 
     public Bank() {
-        accounts = new ArrayList<>();
+        accounts = new HashMap<>();
     }
 
-    public void newAccount(String name,int banlance, Client client){
-        accounts.add(new Account(name,banlance, client));
+    public void newAccount(String name, int balance, Client client) {
+        accounts.put(new Account(name, balance, client), client);
     }
 
-    public Client seekClient(String accountName) {
-        for (Account account : accounts) {
-            if (accountName.equals(account.getAccountName())) {
-                return account.getClient();
+    public Client seekClient(String account) {
+        for (Map.Entry<Account, Client> entry : accounts.entrySet()) {
+            if (entry.getKey().getAccountName().equals(account)) {
+                return entry.getValue();
             }
         }
         return null;
@@ -25,9 +27,9 @@ public class Bank {
 
     public List<Account> seekAccount(Client client) {
         List<Account> findAccount = new ArrayList<>();
-        for (Account account : accounts) {
-            if (client.equals(account.getClient())) {
-                findAccount.add(account);
+        for (Map.Entry<Account, Client> entry : accounts.entrySet()) {
+            if (client.equals(entry.getValue())) {
+                findAccount.add(entry.getKey());
             }
         }
         return findAccount;
