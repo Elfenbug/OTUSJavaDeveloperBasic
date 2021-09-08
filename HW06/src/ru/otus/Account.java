@@ -1,31 +1,23 @@
 package ru.otus;
 
 public class Account {
-    private String accountName;
+    private String name;
     private int banlance;
-    private Client client;
 
-    public Account(String accountName, int banlance, Client client) {
-        this.accountName = accountName;
+    public Account(String accountName, int banlance) {
+        this.name = accountName;
         this.banlance = banlance;
-        this.client = client;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getName() {
+        return name;
     }
-
-    public Client getClient() {
-        return client;
-    }
-
 
     @Override
     public String toString() {
         return "Account{" +
-                "accountName='" + accountName + '\'' +
+                "accountName='" + name + '\'' +
                 ", banlance=" + banlance +
-                ", client=" + client +
                 '}';
     }
 }
