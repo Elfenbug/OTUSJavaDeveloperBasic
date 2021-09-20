@@ -1,7 +1,8 @@
 package ru.otus;
 
-public class HomeWork {
+import unit.*;
 
+public class HomeWork {
     /*
         Заготовка для ДЗ представляет собой игру в кости.
         При вызове game.playGame(), два игрока кидают кости.
@@ -11,7 +12,16 @@ public class HomeWork {
         Информацию о пройденном тесте предлагается выводить в System.out, а об упавшем в System.err
      */
     public static void main(String[] args) {
+        DiceTestImplTest diceTest = new DiceTestImplTest();
+        diceTest.testDiceRoll();
 
+        PlayGameDiceTest playGameDiceTest = new PlayGameDiceTest();
+        playGameDiceTest.testDiceInGame();
+
+        GameWinnerConsolePrinterTest gameWinnerConsolePrinterTest = new GameWinnerConsolePrinterTest();
+        gameWinnerConsolePrinterTest.testGameWinnerPrinter();
+
+        PlayGameWinnerConsolePrinterTest playGameWinnerConsolePrinterTest = new PlayGameWinnerConsolePrinterTest();
+        playGameWinnerConsolePrinterTest.testGameWinnerPrinter();
     }
-
 }
